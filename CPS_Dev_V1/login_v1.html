@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>CPs-v1-登录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        };
+        function stops(){
+           return false;
+        };
+        document.oncontextmenu=stops;
+    </script>
+
+
+</head>
+
+<body class="music-bg">
+    <div class="signinpanel animated fadeInDown">
+        <div class="row">
+            <div class="col-sm-12">
+                <form method="post" action="index.html">
+                    <h2 class="no-margins">欢迎回来！</h2>
+                    <p class="m-t-md">欢迎使用联通音乐中心增值服务运营平台</p>
+                    <input type="email" class="form-control uname" placeholder="用户名" required=""/>
+                    <input type="password" class="form-control pword m-b" placeholder="密码" required="" />
+                    <a href="forget.html">忘记密码了？</a>
+                    <a href="register.html">注册新账号</a>
+                    <button class="btn btn-success btn-block">登录</button>
+                </form>
+            </div>
+        </div>
+        <div class="signup-footer">
+            <div class="pull-left">
+                &copy; TINA CUCC CP CMS V1.0
+                <p class="text-muted">Build 2017-05-09 14:21:13</p>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script type="text/javascript" src="js/login_bg3.js"></script>
+
+
+</body>
+
+</html>

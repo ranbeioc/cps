@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--360浏览器优先以webkit内核解析-->
+
+
+    <title> - 主页示例</title>
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="widget style1 lazur-bg">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <i class="fa fa-check fa-5x"></i>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <span> 待审批 </span>
+                                    <h2 class="font-bold">116</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="widget style1 red-bg">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <i class="fa fa-close fa-5x"></i>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <span> 已打回 </span>
+                                    <h2 class="font-bold">260</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="widget style1 navy-bg">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <i class="fa fa-tv fa-5x"></i>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <span> 已发布 </span>
+                                    <h2 class="font-bold">29</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="widget style1 yellow-bg">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <i class="fa fa-edit fa-5x"></i>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <span> 发布后修改 </span>
+                                    <h2 class="font-bold">12</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>所有待审批运营内容</h5>
+                                <div class="ibox-tools">
+                                    <button type="button" id="loading-example-btn" class="btn btn-white btn-xs"><i class="fa fa-refresh"></i> 刷新</button>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row m-b-sm m-t-sm">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <input type="text" placeholder="请输入运营内容名称" class="input-sm form-control"> <span class="input-group-btn">
+                                                <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-list">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                              <th>运营者</th>
+                                              <th>版块</th>
+                                              <th>栏目</th>
+                                              <th>标题</th>
+                                              <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile3.html"><img alt="image" title="CP-天籁" class="img-circle" src="img/a5.jpg"><strong> CP-天籁</strong></a>
+                                                    
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">看
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">专题
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【专题】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:56:07</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile1.html"><img alt="image" title="CP-路通" class="img-circle" src="img/a7.jpg"><strong> CP-路通</strong></a>
+
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">唱
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">排行
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【排行】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:56:03</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile2.html"><img alt="image" title="CP-道然" class="img-circle" src="img/a4.jpg"><strong> CP-道然</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">听
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌手
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌手】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:55:55</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_peps_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile3.html"><img alt="image" title="CP-天籁" class="img-circle" src="img/a5.jpg"><strong> CP-天籁</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">看
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌曲
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌曲】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:56:07</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_song_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile1.html"><img alt="image" title="CP-路通" class="img-circle" src="img/a7.jpg"><strong> CP-路通</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">唱
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">推荐
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【推荐】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:56:03</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_ztlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile2.html"><img alt="image" title="CP-道然" class="img-circle" src="img/a4.jpg"><strong> CP-道然</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">听
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌手
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌手】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:55:55</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_peps_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile3.html"><img alt="image" title="CP-天籁" class="img-circle" src="img/a5.jpg"><strong> CP-天籁</strong></a>
+                                                    
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">看
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">专题
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【专题】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:56:07</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile1.html"><img alt="image" title="CP-路通" class="img-circle" src="img/a7.jpg"><strong> CP-路通</strong></a>
+
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">唱
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">排行
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【排行】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:56:03</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile2.html"><img alt="image" title="CP-道然" class="img-circle" src="img/a4.jpg"><strong> CP-道然</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">听
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌手
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌手】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:55:55</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_peps_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile2.html"><img alt="image" title="CP-道然" class="img-circle" src="img/a4.jpg"><strong> CP-道然</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">听
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌手
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌手】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>提交于 2017-05-05 20:55:55</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_peps_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-success btn-sm demo3"> 通过 </a>
+                                                    <a class="btn btn-danger btn-sm demo4"> 打回 </a>
+                                                </td>
+                                            </tr>
+                                            
+                                            
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-white" disabled="disabled"><i class="fa fa-chevron-left"></i>
+                                        </button>
+                                        <button class="btn btn-white active">1</button>
+                                        <button class="btn btn-white">2</button>
+                                        <button class="btn btn-white">3</button>
+                                        <button class="btn btn-white">4</button>
+                                        <label class="btn btn-white" disabled="disabled">...</label>
+                                        <button class="btn btn-white">9</button>
+                                        <button class="btn btn-white">10</button>
+                                        <button class="btn btn-white">11</button>
+                                        <button class="btn btn-white">12</button>
+                                        <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>所有已发布运营内容</h5>
+                                <div class="ibox-tools">
+                                    <button type="button" id="loading-example-btn" class="btn btn-white btn-xs"><i class="fa fa-refresh"></i> 刷新</button>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row m-b-sm m-t-sm">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <input type="text" placeholder="请输入运营内容名称" class="input-sm form-control"> <span class="input-group-btn">
+                                                <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-list">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                              <th>运营者</th>
+                                              <th>版块</th>
+                                              <th>栏目</th>
+                                              <th>标题</th>
+                                              
+                                              <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile2.html"><img alt="image" title="CP-道然" class="img-circle" src="img/a4.jpg"><strong> CP-道然</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">听
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌手
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌手】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:55:55</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_peps_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile3.html"><img alt="image" title="CP-天籁" class="img-circle" src="img/a5.jpg"><strong> CP-天籁</strong></a>
+                                                    
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">看
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">专题
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【专题】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:07</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile1.html"><img alt="image" title="CP-路通" class="img-circle" src="img/a7.jpg"><strong> CP-路通</strong></a>
+
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">唱
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">排行
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【排行】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:03</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile3.html"><img alt="image" title="CP-天籁" class="img-circle" src="img/a5.jpg"><strong> CP-天籁</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">看
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌曲
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌曲】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:07</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_song_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile1.html"><img alt="image" title="CP-路通" class="img-circle" src="img/a7.jpg"><strong> CP-路通</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">唱
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">推荐
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【推荐】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:03</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_ztlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile2.html"><img alt="image" title="CP-道然" class="img-circle" src="img/a4.jpg"><strong> CP-道然</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">听
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌手
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌手】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:55:55</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_peps_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile3.html"><img alt="image" title="CP-天籁" class="img-circle" src="img/a5.jpg"><strong> CP-天籁</strong></a>
+                                                    
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">看
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">专题
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【专题】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:07</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile1.html"><img alt="image" title="CP-路通" class="img-circle" src="img/a7.jpg"><strong> CP-路通</strong></a>
+
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">唱
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">排行
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【排行】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:03</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_zlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile3.html"><img alt="image" title="CP-天籁" class="img-circle" src="img/a5.jpg"><strong> CP-天籁</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">看
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">歌曲
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【歌曲】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:07</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_song_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="project-people">
+                                                    <a href="profile1.html"><img alt="image" title="CP-路通" class="img-circle" src="img/a7.jpg"><strong> CP-路通</strong></a>
+                                                </td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">唱
+                                                </span></td>
+                                                <td class="project-status">
+                                                    <span class="label label-success">推荐
+                                                </span></td>
+                                                <td class="project-title">
+                                                    <a href="#.html">【推荐】运营内容变更审批</a>
+                                                    <br>
+                                                    <small>发布于 2017-05-05 20:56:03</small>
+                                                </td>
+                                                
+                                                <td class="project-actions">
+                                                    <a href="tv_ztlist_hty.html" class="btn btn-info btn-sm J_menuItem"> 版本 </a>
+                                                    <a class="btn btn-danger btn-sm demo5"> 下架 </a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-white" disabled="disabled"><i class="fa fa-chevron-left"></i>
+                                        </button>
+                                        <button class="btn btn-white active">1</button>
+                                        <button class="btn btn-white">2</button>
+                                        <button class="btn btn-white">3</button>
+                                        <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/plugins/layer/layer.min.js"></script>
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <!-- 自定义js -->
+    <script src="js/content.js"></script>
+    <!-- Sweet alert -->
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!--flotdemo-->
+    <script type="text/javascript">
+        $(function() {
+            $('.demo3').click(function () {
+                swal({
+                    title: "您确定要审批通过该用户运营审批吗？",
+                    text: "通过后可发布运营内容，请查看详细资料后再操作！",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "审批通过！",
+                    cancelButtonText: "我再想想…",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("审批成功！", "您已经通过了该用户运营内容的审批。", "success");
+                    } else {
+                        swal("已取消", "您取消了通过审批运营内容操作！", "error");
+                    }
+                });
+            });
+
+            $('.demo4').click(function () {
+                swal({
+                    title: "您确定要拒绝并打回该用户运营审批吗？",
+                    text: "打回后用户可再提交审批，请查看详细资料后再操作！",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "拒绝并打回！",
+                    cancelButtonText: "我再想想…",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("打回成功！", "您已经拒绝了该用户运营内容的审批。", "success");
+                    } else {
+                        swal("已取消", "您取消了打回审批运营内容操作！", "error");
+                    }
+                });
+            });
+
+            $('.demo5').click(function () {
+                swal({
+                    title: "您确定要直接下架该用户已发布运营内容吗？",
+                    text: "下架后用户可再提交审批，请查看详细资料后再操作！",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "立即下架！",
+                    cancelButtonText: "我再想想…",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("下架成功！", "您已经下架了该用户发布的运营内容。", "success");
+                    } else {
+                        swal("已取消", "您取消了立即下架运营内容操作！", "error");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

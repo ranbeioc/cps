@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>CPs-v1--注册</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+    <style type="text/css">
+        html,body{height:auto;overflow:hidden;}
+    </style>
+</head>
+
+<body class="music-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">CPs</h1>
+
+            </div>
+            <h3>欢迎注册</h3>
+            <p>申请联通音乐中心增值服务运营平台账户</p>
+            <form class="m-t" role="form" action="login.html">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入您所属机构名称" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入机构地址" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入机构联系人姓名" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入机构联系电话" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入代理作品数量" required="">
+                </div>
+                <div class="form-group text-left">
+                    <div class="checkbox i-checks">
+                        <label class="no-padding">
+                            <input type="checkbox"><i></i> 我同意注册审核协议</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">提交审核</button>
+
+                <p class="text-muted text-center"><small>已经有账户了？</small><a href="login_v2.html">点此登录</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+
+<script type="text/javascript" src="js/login_bg4_reg.js"></script>
+
+    <script type="x-shader/x-fragment" id="fragmentShader">
+    #define TWO_PI 6.2831853072
+    #define PI 3.14159265359
+
+    precision highp float;
+
+    uniform float globaltime;
+    uniform vec2 resolution;
+    uniform float aspect;
+    uniform float scroll;
+    uniform float velocity;
+
+    const float timescale = 0.15;
+    const float displace = 0.03;
+    const float gridSize = 20.0;
+    const int layers = 3;
+    const float detail = 2.0;
+    const float wave = 1.0;
+
+    vec2 rotate(vec2 v, float angle) {
+        float c = cos(angle);
+        float s = sin(angle);
+        return v * mat2(c, -s, s, c);
+    }
+
+    vec3 coordToHex(vec2 coord, float scale, float angle) {
+        vec2 c = rotate(coord, angle);
+        float q = (1.0 / 3.0 * sqrt(3.0) * c.x - 1.0 / 3.0 * c.y) * scale;
+        float r = 2.0 / 3.0 * c.y * scale;
+        return vec3(q, r, -q - r);
+    }
+
+    vec3 hexToCell(vec3 hex, float m) {
+        return fract(hex / m) * 2.0 - 1.0;
+    }
+
+    float absMax(vec3 v) {
+        return max(max(abs(v.x), abs(v.y)), abs(v.z));
+    }
+
+    float nsin(float value) {
+        return sin(value * TWO_PI) * 0.5 + 0.5;
+    }
+
+    float hexToFloat(vec3 hex, float amt) {
+        return mix(absMax(hex), 1.0 - length(hex) / sqrt(3.0), amt);
+    }
+
+    float calc(vec3 hex, float time, float len) {
+        float value = 0.0;
+
+        for (int i = 0; i < layers; i++) {
+            vec3 cell = hexToCell(hex, 1.0 + float(i));
+            value += nsin(
+                hexToFloat(
+                    cell,
+                    nsin(len * wave + time + float(i) / float(layers))
+                ) * detail + nsin(time * 0.5)
+            );
+        }
+
+        return value / float(layers);
+    }
+
+    void main(void) {
+        vec2 tx = (gl_FragCoord.xy / resolution.xy - 0.5) * vec2(aspect, 1.0) * 2.0;
+        float time = globaltime * timescale - scroll;
+        float invScroll = 1.0 - scroll;
+        float rgb[3];
+        float len = 1.0 - length(tx) * 0.3;
+        float zoom = nsin(time * 0.1) + len * velocity * 3.0;
+        float angle = TWO_PI * nsin(time * 0.05) + PI * len * scroll;
+        vec3 hex = coordToHex(tx, gridSize * zoom, angle);
+
+        for (int i = 0; i < 3; i++) {
+            float time2 = time + float(i) * displace * invScroll;
+            rgb[i] = pow(calc(hex, time2, len), 3.0) * (0.2 + 0.8 * sin(PI * len * 0.5));
+        }
+
+        gl_FragColor = vec4(
+            rgb[0] * (1.0 - scroll * 0.2),
+            rgb[1] * invScroll,
+            (rgb[2] + 0.2) * invScroll,
+            1.0
+        );
+    }
+    </script>
+    <script type="text/javascript" src="js/login_bg4.js"></script>
+    
+
+</body>
+
+</html>
