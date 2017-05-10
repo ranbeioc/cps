@@ -52,7 +52,9 @@ h5 {
     height: 100vh;
 }
 
-
+.tburl{
+    width: 120px!important;
+}
 
 html,body{
     height: 100%;
@@ -3806,6 +3808,8 @@ nav.page-tabs .page-tabs-content {
     line-height: 1.42857;
     padding: 8px;
     vertical-align: middle;
+    word-break: break-all!important;
+    word-wrap: break-word!important;
 }
 
 
