@@ -4851,7 +4851,11 @@ body.modal-open {
 
 .lockscreen.middle-box {
     width: 200px;
-    padding-top: 110px;
+    position: fixed;
+    z-index: 2;
+    left: 55%; top: 30%;
+    margin-top: -200px;    /* 高度的一半 */
+    margin-left: -200px;    /* 宽度的一半 */
 }
 
 .loginscreen {
@@ -4895,7 +4899,7 @@ body.modal-open {
 }
 
 .lock-word {
-    z-index: 10;
+    z-index: 100;
     position: absolute;
     top: 110px;
     left: 50%;
