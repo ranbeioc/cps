@@ -5244,6 +5244,8 @@ ul.notes li div {
 
 .file-name small {
     color: #676a6c;
+    word-break: break-all!important;
+    word-wrap: break-word!important;
 }
 
 .corner {
