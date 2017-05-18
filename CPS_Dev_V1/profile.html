@@ -13,6 +13,7 @@
 
     <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
     <!-- Sweet Alert -->
     <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
@@ -55,7 +56,7 @@
                             <div class="user-button">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <button type="button" class="J_menuItem btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-lock"></i> 重置密码 </button>
+                                        <button type="button" class="J_menuItem btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-lock"></i> 修改密码 </button>
                                     </div>
                                     <div class="col-sm-6">
                                         <button type="button" class="J_menuItem btn btn-danger btn-sm btn-block" data-toggle="modal" data-target="#myModalS"><i class="fa fa-check-square-o"></i> 查看权限 </button>
@@ -77,7 +78,7 @@
                                 <div class="ibox">
                                     <div class="ibox-content">
 
-                                        <h3>已提交待审核</h3>
+                                        <h3>待审核</h3>
                                         <p class="small"><i class="fa fa-hand-o-up"></i> 查看该账户运营的待审核内容</p>
                                         <ul class="sortable-list connectList agile-list">
                                             <li class="success-element">
@@ -132,7 +133,7 @@
                             <div class="col-sm-4">
                                 <div class="ibox">
                                     <div class="ibox-content">
-                                        <h3>已审核待发布</h3>
+                                        <h3>待发布</h3>
                                         <p class="small"><i class="fa fa-hand-o-up"></i> 查看该账户运营的待审核内容</p>
                                         <ul class="sortable-list connectList agile-list">
                                             <li class="success-element">
@@ -188,7 +189,7 @@
                             <div class="col-sm-4">
                                 <div class="ibox">
                                     <div class="ibox-content">
-                                        <h3>已发布上线</h3>
+                                        <h3>已发布</h3>
                                         <p class="small"><i class="fa fa-hand-o-up"></i> 查看该用户已发布的运营内容</p>
                                         <ul class="sortable-list connectList agile-list">
                                             <li class="success-element">
@@ -386,17 +387,10 @@
     <script src="js/jquery.min.js?v=2.1.4"></script>
     <script src="js/bootstrap.min.js?v=3.3.6"></script>
 
-
-
     <!-- 自定义js -->
     <script src="js/content.js?v=1.0.0"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
 
-
-    <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-
-    <!-- Peity -->
-    <script src="js/demo/peity-demo.js"></script>
     <!-- Sweet alert -->
     <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
     
@@ -480,6 +474,11 @@
                     text: "已向该用户自动发送邮件通知",
                     type: "success"
                 });
+            });
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
             });
         });
 
